@@ -15,6 +15,6 @@ trait FunSetsInterface {
   def filter(s: FunSet, p: Int => Boolean): FunSet
   def forall(s: FunSet, p: Int => Boolean): Boolean
   def exists(s: FunSet, p: Int => Boolean): Boolean
-  def map(s: FunSet, f: Int => Int): FunSet
+  //def map(s: FunSet, f: Int => Int): FunSet
   def toString(s: FunSet): String
 }
