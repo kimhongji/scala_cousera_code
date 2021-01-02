@@ -68,20 +68,18 @@ trait FunSets extends FunSetsInterface {
    * Returns whether there exists a bounded integer within `s`
    * that satisfies `p`. * at least *
    */
-  def exists(s: FunSet, p: Int => Boolean): Boolean = { //forall 을 사용하지 않아서 사용한 방식으로 바꿔봐야
-    var check = false
-    for(i <- -bound to bound if contains(s, i)) if(forall(singletonSet(i), p)) check = true;
-    check
+  def exists(s: FunSet, p: Int => Boolean): Boolean = {
+    !forall(s, x => !p(x))
   }
 
   /**
    * Returns a set transformed by applying `f` to each element of `s`.
    */
   def map(s: FunSet, f: Int => Int): FunSet = (x:Int) => {
-    exists(s, (y:Int) => {
+    exists(s, (y: Int) => {
       f(y) == x
     })
-  } //아직 이해 잘 안감
+  }
 
   /**
    * Displays the contents of a set
