@@ -67,6 +67,8 @@ trait FunSets extends FunSetsInterface {
   /**
    * Returns whether there exists a bounded integer within `s`
    * that satisfies `p`. * at least *
+   * 예를 들어 -1, 2, 3, 4 이 있을 때 x > 0 의 조건이 -1 때문에 안된다고 하면
+   * 반대로 x <= 0 으로 조건을 돌렸을 때 true 가 뜬다면 x > 0 인 경우가 1개도 없는 것이고 false 가 뜨면 적어도 1개가 있는 거임
    */
   def exists(s: FunSet, p: Int => Boolean): Boolean = {
     !forall(s, x => !p(x))
