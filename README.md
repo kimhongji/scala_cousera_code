@@ -1,5 +1,6 @@
 # scala_coursera_code
 
+
 ## Week 2: FuncSet
--- 고차함수(Higher-Order functions)
--- 익명함수
+1. 고차함수(Higher-Order functions)
+2. 익명함수
